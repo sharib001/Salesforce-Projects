@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <lightning-input label="Search here" onchange={handleChange}></lightning-input>
+        <select name="" id="" onchange={handleSort}>
+            <option value="acs">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="ac">
+                    <tr key={ac.Id}>
+                        <td>{ac.Name}</td>
+                        <td>{ac.Type}</td>
+                        <td>{ac.Rating}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
